@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col-md-6" *ngFor="
+        let event of events
+          | paginate
+            : {
+                itemsPerPage: currentPageItems,
+                currentPage: currentPage + 1,
+                totalItems: totalItems
+              }">
+      <div class="card shadow-sm">
+        <img [src]="event.image[0].preview.thumbnail" class="card-img-top" alt="Event Image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ event.title }}</h5>
+          <p class="card-text" [innerHTML]="
+              (event.body | slice : 0 : 100) +
+              (event.body.length > 100 ? ' ...' : '')
+            "></p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a [routerLink]="['/events', event.id]" class="btn btn-primary">Read More</a>
+            </div>
+            <p class="card-text">
+              <small class="text-muted">{{
+                event.created * 1000 | date
+                }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination section -->
+<div class="pagination-container">
+  <pagination-controls previousLabel="Previous" nextLabel="Next"
+    (pageChange)="onPageChange($event)"></pagination-controls>
+</div>

@@ -1,0 +1,35 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .event-detail {
+    margin-bottom: 20px;
+  }
+  
+  .categories ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  
+  .location p,
+  .dates p,
+  .contact p,
+  .author p,
+  .organizer p {
+    margin-bottom: 5px;
+  }
+  
+  .images .carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .images .carousel-control-prev,
+  .images .carousel-control-next {
+    width: 5%;
+  }
+  
+  .website a {
+    word-break: break-all;
+  }
+  

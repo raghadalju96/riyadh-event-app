@@ -1,0 +1,22 @@
+<div class="container">
+ <section class="py-5">
+  <div class="px-4 px-lg-5 my-5">
+      <div class="row gx-4 gx-lg-5 align-items-center">
+          <div class="col-md-6">
+            <app-image-slider [images] = "event.image"></app-image-slider>
+        </div>
+          <div class="col-md-6">
+              <div class="small mb-1">{{event.start_date *1000 | date}}</div>
+              <h1 class="display-5 fw-bolder">{{ event.title }}</h1>
+              <div class="fs-5 mb-5">
+                  <span>{{ event.geofield.address }}</span>
+              </div>
+              <p class="lead" [innerHTML]="event.body"></p>
+          </div>
+      </div>
+  </div>
+</section>
+</div>
+
+
+
